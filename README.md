@@ -15,6 +15,11 @@ A simple command line utility for finding anagrams in a specified file
 ```
 where example2.txt is the text file that we want to search for anagrams
 
+Alternatively run the Spring Boot application:
+```
+java -jar ./build/libs/anagram-finder-0.0.1-SNAPSHOT.jar ./example2.txt
+```
+
 ## Big O Analysis
 
 The running time of the algorithm should increase linearly with the size of the input: O(n).
@@ -47,6 +52,8 @@ For now, the solution ignores words found out of order and continues processing.
 2) Assume all characters are permissible in a word, including white space.
 
 3) No requirements on error handling, so just printing error to System out.
+
+4) If words contain letters but with a different case sensitivity, they are not considered the same.  e.g. 'ABC' and 'abc'. 
 
 ## Data Structures
 

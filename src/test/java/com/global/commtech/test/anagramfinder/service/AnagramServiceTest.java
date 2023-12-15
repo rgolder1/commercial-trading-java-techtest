@@ -39,6 +39,14 @@ public class AnagramServiceTest {
         assertTrue(errContent.toString().isEmpty());
     }
 
+    @Test
+    void shouldProcessFile_DifferentSensitivity() {
+        File file = new File("src/test/resources/test_sensitivity.txt");
+        anagramService.process(file);
+        assertEquals("abc\nbAc\naBc\n", outContent.toString());
+        assertTrue(errContent.toString().isEmpty());
+    }
+
     /**
      * Words that have a length that is out of order are ignored.
      */
