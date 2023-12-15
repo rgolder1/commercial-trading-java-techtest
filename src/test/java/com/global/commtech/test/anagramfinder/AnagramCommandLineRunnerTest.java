@@ -31,5 +31,4 @@ class AnagramCommandLineRunnerTest {
         final var exception = assertThrows(Exception.class, () -> anagramCommandLineRunner.run("notExists"));
         assertThat(exception.getMessage()).isEqualTo("notExists Does not exist");
     }
-
 }
