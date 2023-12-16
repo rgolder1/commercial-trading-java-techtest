@@ -59,7 +59,7 @@ public class AnagramServiceTest {
     }
 
     @Test
-    void shouldProcessFile_FileNotFound() {
+    void shouldNotProcessFile_FileNotFound() {
         File file = new File("missing.txt");
         anagramService.process(file);
         assertTrue(outContent.toString().isEmpty());
