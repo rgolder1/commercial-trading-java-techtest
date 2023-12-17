@@ -53,7 +53,7 @@ For now, the solution ignores words found out of order and continues processing.
 
 3) No requirements on error handling, so just printing error to System out.
 
-4) If words contain letters but with a different case sensitivity, they are not considered the same.  e.g. 'ABC' and 'abc'. 
+4) If words contain letters but with a different case sensitivity, they are not considered the same.  e.g. 'ABC' and 'abc'.
 
 ## Data Structures
 

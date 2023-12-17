@@ -16,7 +16,6 @@ public class AnagramServiceTest {
     private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
     private final ByteArrayOutputStream errContent = new ByteArrayOutputStream();
 
-
     @BeforeEach
     public void setUp() {
         System.setOut(new PrintStream(outContent));
@@ -55,6 +54,17 @@ public class AnagramServiceTest {
         File file = new File("src/test/resources/test_out_of_order.txt");
         anagramService.process(file);
         assertEquals("abc\nhello,olleh\n", outContent.toString());
+        assertTrue(errContent.toString().isEmpty());
+    }
+
+    /**
+     * Duplicate words are handled correctly.
+     */
+    @Test
+    void shouldProcessFile_Duplicate() {
+        File file = new File("src/test/resources/test_duplicate.txt");
+        anagramService.process(file);
+        assertEquals("abc,abc,bac,bac\nhello\n", outContent.toString());
         assertTrue(errContent.toString().isEmpty());
     }
 
